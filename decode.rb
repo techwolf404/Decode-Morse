@@ -1,4 +1,4 @@
-def decode_char(char)
+.5585def decode_char(char)
   my_obj = {
     '.-' => 'A', '-...' => 'B', '-.-.' => 'C', '-..' => 'D', '.' => 'E',
     '..-.' => 'F', '--.' => 'G', '....' => 'H', '..' => 'I', '.---' => 'J',
@@ -17,6 +17,12 @@ def decode_word(word)
   end
   my_string
 end
+
+def decode_sentence(sentence)
+  my_sentence = ''
+  sentence.split('   ').each { |char| my_sentence += "#{decode_word(char)} " }
+  my_sentence
+  end
 
 puts decode_word('.-')
 puts decode_word('-- -.--')
